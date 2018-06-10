@@ -42,6 +42,7 @@ function triangle() {
         context.moveTo(75, 50);
         context.lineTo(120, 75);
         context.lineTo(100, 25);
+        context.rotate(getRandomInt(0,190)) 
         context.fillStyle = getRandomColor();
         context.fill();
 
