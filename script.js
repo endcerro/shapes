@@ -16,8 +16,9 @@
     resizeCanvas();
 
     function drawStuff() {
-        // do your drawing stuff here
+
         var a = getRandomInt(1,4)
+        a = 8
         switch (a)
         {
             case 1:
@@ -33,30 +34,48 @@
                 circle()
                 break;
         }
+        triangle();
+        carré();
+        randdiamong();
+        circle();
+
+
     }
 
 function triangle() {
 
-
+        //full random ready
         context.beginPath();
-        context.moveTo(75, 50);
-        context.lineTo(120, 75);
-        context.lineTo(100, 25);
-        context.rotate(getRandomInt(0,190)) 
+        context.moveTo(getRandomInt(0,768), getRandomInt(0,1024));
+        context.lineTo(getRandomInt(0,768), getRandomInt(0,1024));
+        context.lineTo(getRandomInt(0,768), getRandomInt(0,1024));
+        context.rotate(getRandomInt(0,190))
         context.fillStyle = getRandomColor();
         context.fill();
-
 }
-function carré(position, size_factor, color) {
+function carré() {
 
-
+        //full random ready
         context.fillStyle=getRandomColor();
-        context.fillRect(10,10,40,40)
-
+        context.fillRect(getRandomInt(0,768),getRandomInt(0,1024),getRandomInt(0,768),getRandomInt(0,1024))
 }
+
+function randdiamong() {
+
+        //full random ready
+        var x,y,width,height;
+        x= getRandomInt(0,768)
+        y = getRandomInt(0,1024)
+        width = getRandomInt(10,200)
+        height = getRandomInt(10,200)
+        drawDiamond(x,y,width,height)
+}
+
+
 function drawDiamond(x, y, width, height){
     context.save();
     context.beginPath();
+
     context.moveTo(x, y);
 
     // top left edge
@@ -78,12 +97,12 @@ function drawDiamond(x, y, width, height){
 }
    function circle() {
 
-       var posx = 100
-       var posy = 200
+       var posx = getRandomInt(0,768)
+       var posy = getRandomInt(0,1024)
 
        context.fillStyle = getRandomColor();
        context.beginPath();
-       context.arc(posx, posy, 50, 0, 2 * Math.PI);
+       context.arc(posx, posy, getRandomInt(10,50), 0, 2 * Math.PI);
        context.fill();
    }
 
